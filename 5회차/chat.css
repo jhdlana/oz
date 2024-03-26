@@ -1,0 +1,104 @@
+/* 1. 전체적인 세팅부터 */
+*{
+    box-sizing: border-box;
+    font-family: "Single Day", cursive;
+}
+
+html{
+    height: 100%;
+}
+body{
+    height: 100%; /* html 화면 전체를 사용하겠다는 것 */
+    margin: 0px; /* 개발자 도구로 확인해보면 기본적으로 body에는 margin이 있음 그걸 없애고 싶으면 0px값을 주면 됨*/
+    
+}
+
+.container{
+    height: 100%;
+    background-color: pink;
+    
+}
+
+/* 2. 스크린 크기 조정 */
+.chat-screen{
+    height: calc(100% - 120px); /* css 수치끼리 계산을 해서 그 결과를 속성값으로 쓰고싶을때 calc()사용, 120px을 뺀 이유는 채팅창의 크기를 120px로 하기 위해*/
+}
+
+/* 3. 유저 정보 표시되는 부분 */
+.user{
+    background-color: white;
+    padding: 16px;
+    height: 80px;
+}
+
+.user__column{
+   float: left; /* float는 위치를 변경시키는데 상위 요소를 기준으로 왼쪽으로 또는 오른쪽으로 붙는 형태도 배치 / 여기에선 상위요서가 친구, 2 기준이므로 사진이 그 기준 왼쪽으로 붙게 float 이용*/
+}
+
+.user__pic{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: pink;
+}
+.user__nick, .user__count{
+    margin: 5px;
+}
+.user__count{
+    font-size: 12px;
+    color: gray;
+}
+
+/* 4. 채팅 입력 창 */
+
+
+form{
+    
+    position: relative;
+}
+
+
+.chat-form {
+    height: 120px;
+    background-color: white;
+    z-index: 4;
+}
+
+.chat-form__field{
+    height: 120px;
+}
+/*
+textarea{
+    position: relative;
+}
+*/
+
+.chat-form__msg{
+    float: left;
+    width: calc(100% - 120px);
+    height: 120px;
+    border: none;
+    font-size: 24px;
+    padding: 10px; /* 글씨 간의 여백 */
+    resize: none; /* textarea 크기 조절 막음*/
+    /*z-index: 3;*/
+}
+
+.chat-form__bt{
+    float:right; /* float을 이용해서 textarea와 전송버튼의 위치를 나란히 붙임 => 메세지에서 float: left로 같이 지정해야함. / 그리고 전송 사이즈 크기때문에 아래로 밀려나서 사용하게됨*/
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    background-color: pink;
+    font-size: 18px;
+   
+    
+}
+
+.chat-form__msg:focus{
+    outline: none;
+}
+.chat-form__bt:active{
+    background-color: hotpink;
+}

@@ -1,0 +1,64 @@
+ul > li{
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+
+.chat-screen > .chat-screen__texts {
+    padding: 0;
+    list-style-type: none; /* 리스트의 기호가 사라짐 (점박이)*/
+   
+    /*           */
+    z-index: 1;
+    overflow:hidden ;
+}
+
+/*
+.chat-screen__texts {
+    padding: 0;
+    list-style-type: none;  리스트의 기호가 사라짐 (점박이)
+  
+    z-index: 1;
+    overflow:hidden ;
+}
+*/
+
+
+
+.chat-screen__texts > .text {
+    background-color: hotpink;
+    width: 200px;
+    height: 50px;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border-radius:  8px;
+    line-height: 30px; /* 행 높이 / padding외 남는 공간을 가져감*/
+
+    position: relative;
+    left: 20px;
+
+
+    
+
+}
+
+.chat-screen__texts > .text::after{
+    content:"";
+    border-right: 16px solid hotpink;
+    border-bottom: 16px solid transparent; /* transparent : 투명도를 다루는 키워드 그럼 사걱형이 삼각형 모양으로 바뀜*/
+    position: absolute;
+    top: 10px;
+    left: -10px;
+}
+
+.chat-screen__texts > .text:hover {
+    background-color: palevioletred;
+    transition: background-color 1500ms 200ms ease-in;
+}
+
+
+.chat-screen__texts > .text:hover::after{
+    border-right: 16px solid palevioletred;
+    transition: background-color 1500ms 200ms ease-in;
+}

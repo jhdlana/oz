@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>여백 다루기</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+
+        margin: 10px 20px 30px 40px;
+        /*
+        top botton left right -padding 접미사 각각 픽셀 부여 가능
+        */
+        padding-top: 20px;
+        padding-right: 50px;
+
+        box-sizing: border-box; /*box-sizing이 content-box이면 width와 height가 변함 없이 margin과 padding이 테두리기준으로 커지는데 box-sizng이 border-box면 width와 height이 여백을 포함하여 고정 돼서 200 200 이 고정되어 margin과 padding의 크기를 높일수록 콘텐츠 영역은 감소하게 됨*/
+    }
+
+</style>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
