@@ -11,12 +11,12 @@ body{
     height: 100%; /* html 화면 전체를 사용하겠다는 것 */
     margin: 0px; /* 개발자 도구로 확인해보면 기본적으로 body에는 margin이 있음 그걸 없애고 싶으면 0px값을 주면 됨*/
     
-}
-
+}  
+  
 .container{
     height: 100%;
     background-color: pink;
-    
+    position: relative;
 }
 
 /* 2. 스크린 크기 조정 */
@@ -53,8 +53,7 @@ body{
 /* 4. 채팅 입력 창 */
 
 
-form{
-    
+form{  
     position: relative;
 }
 
@@ -68,11 +67,7 @@ form{
 .chat-form__field{
     height: 120px;
 }
-/*
-textarea{
-    position: relative;
-}
-*/
+
 
 .chat-form__msg{
     float: left;

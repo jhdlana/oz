@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: "Gaegu", sans-serif;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    background-color: papayawhip;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+
+h1{
+    margin: 5px;
+ }
+ 
+fieldset {
+    margin: 30px;
+    border: 5px double pink;
+}
+
+.middle {
+    margin-left: 350px;
+    margin-right: 350px;
+}
+.header{
+    background-color: rgb(244, 182, 244);
+    padding: 0;
+    margin: 50px 200px;
+}
+
+.date{
+    padding: 0;
+}
+.range {
+    padding-left: 0;
+    padding-right: 0;
+    accent-color:pink;
+}
+
+.date{
+    text-align: right;
+}
+
+.bf{
+    color: hotpink;
+}
+.pork{
+    color: rgb(254, 0, 157);
+}
+.sto{
+    color:blue;
+    font-size: 25px;
+}
+.need{
+    color: skyblue;
+}
+.oh{
+    color: darkred;
+    font-size: 30px;
+}
+.need, .pork, .bf, .sto, .oh {
+    font-weight: bold;
+}

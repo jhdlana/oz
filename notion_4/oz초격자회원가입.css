@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    /* 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+     */
+     background-color: pink;
+}
+
+/* .sign{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+
+} */
+.sign{
+    height: 100%;
+}
+.intro{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.write{
+    font-size: 20px;
+    border: 1px solid black;
+    margin: 10px;
+    width: 500px;
+    height: 55px;
+    border-radius: 5px;
+}
+.writenum{
+    
+    font-size: 15px;
+    border: 1px solid black;
+    margin: 10px;
+    width: 110px;
+    height: 55px;
+    border-radius: 5px;
+}
+p{
+    display: flex;
+    justify-content: space-between;
+}
+span:nth-child(2) {
+    align-self: center;
+}
+span:nth-child(4) {
+    align-self: center;
+}
+.code{
+    display: flex;
+    flex-direction: column;
+}
+
+.code__tran, .code__check{
+    display: flex;
+    justify-content: right;
+    font-size: 15px;
+    margin: 0%;
+    margin-bottom: 5px;
+}
+
+.code__tran button{
+    line-height: 23px;
+    width: 100px;
+    padding: 0;
+}
+
+.code__check button{
+    line-height: 23px;
+    width: 100px;
+    padding: 0;
+}
+.region{
+    width: 500px;
+    height: 55px;
+    font-size: 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.sex {
+    text-align: center;
+    margin: 20px;
+}
+.join {
+    width: 500px;
+    height: 55px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 30px;
+}
