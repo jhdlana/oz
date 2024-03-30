@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="header.css" rel="stylesheet">
+    <link href="content_header.css" rel="stylesheet">
+    <link href="main__simple.css" rel="stylesheet">
+    <link href="main__education.css" rel="stylesheet">
+    <link href="main__skill.css" rel="stylesheet">
+    <link href="last.css" rel="stylesheet">
+    <title>소개 페이지 만들기</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            height: 100%;
+            font-size: 16px;
+        }
+        body{
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            height: 100vh;
+        }
+        .main {
+            /* height: 100%; */
+            height: 100vh;
+            flex-direction: column;
+        }
+        .flex {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <header class="header flex">
+            <div class="profile flex">
+                <section class="profile__simple">
+                    <div class="profile__img">&#128105;</div>
+                    <div class="profile__name">LEE JOOHEE</div>
+                    <div class="profile__intro">Front-end Developer</div>
+                </section>
+                
+                <section class="profile__4 flex">
+                    <article class="profile__phone flex">
+                        <div class="profile__phone emoji">&#128222;</div>
+                        <div class="profile__phone__num">010-1234-5678</div>
+                    </article>
+                    <article class="profile__email flex">
+                        <div class="profile__email emoji">&#128231;</div>
+                        <div class="profile__email__address">ljh06031@gmail.com</div>
+                    </article>
+                    <article class="profile__blog flex">
+                        <div class="profile__blog emoji">&#128221;</div>
+                        <div class="profile__blog__name">Blog</div>
+                    </article>
+                    <article class="profile__git flex">
+                        <div class="profile__git emoji">&#128159;</div>
+                        <div class="profile__git__name">Git</div>
+                    </article>
+                </section>
+                
+            </div>
+        </header>
+        
+
+        <main class="main flex">
+            <div class="content flex">
+                <section class="content__section1 flex">
+                    <div class="content__header__bigname">JuDevT</div>
+                    <div class="content__header__intro">Front-end developer</div>
+                </section>
+                <section class="content__section2 flex">
+                    <span class="content__header__home">HOME</span>
+                    <span class="content__header__resume">RESUME</span>                        <span class="content__header__projects">PROJECTS</span>
+                </section>
+            </div>
+
+            <div class="main__content">
+                <div class="main__simple flex">
+                    <div class="main__simple__profile">PROFILE</div>
+                    <div class="main__simple__content flex">
+                        <div class="main__simple__myresume"><span class="main__simple__myresume__name">MY RESUME</span> </div>
+                        <div class="main__simple__myproject"><span class="main__simple__myproject__name">MY PROJECT</span> </div>
+                        <div class="main__simple__intro">
+                            <span class="hi">안녕하세요.</span> <br>
+                            끊임없이 도전하고 변화를 하고 싶은 프론트개발자 이주희입니다. <br>
+                            부족한 부분은 항상 스스로 노력하고 도전하며 계속해서 성장하겠습니다. <br>
+                            잘부탁드립니다. :)
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="main__education flex">
+                    <div class="main__education__profile">EDUCATION / MILITARY</div>
+                    <div class="main__education__content flex">
+                        <div class="main__education__content__camp flex">
+                            <div class="main__education__camp__img">&#128421;</div>
+                            <div class="main__education__campintro">
+                                <span class="date">2024-03 ~ 2024-09</span>  <br>
+                                <span class="education_name">OZ 코딩 스쿨 </span> <br>
+                                웹 개발에 대한 지식을 공부하고 있습니다.
+                            </div>
+                        </div>
+                        <div class="main__education__content__college flex">
+                            <div class="main__education__college__img">&#127891;</div>
+                            <div class="main__education__collegeintro">
+                                <span class="date">2019-03 ~ 2023-02</span>  <br>
+                                <span class="education_name">명지전문대학교 컴퓨터공학과</span> <br>
+                                컴퓨터에 관련된 지식을 배웠습니다.
+                            </div>
+                        </div>
+                        <div class="main__education__content__high flex">
+                            <div class="main__education__high__img">&#127891;</div>
+                            <div class="main__education__highintro">
+                                <span class="date">2015-03 ~ 2018-02</span>  <br>
+                                <span class="education_name">동명여자고등학교</span> <br>
+                                기본적인 공부를 배웠습니다.
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="main__skill flex">
+                    <div class="main__skill__SKILL">SKILL</div>
+                    <div class="main__skill__img flex">
+                        <img src="images/css.png" width="70px" height="70px">
+                        <img src="images/html.png" width="70px" height="70px">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="last">
+            <span class="last__name">2024 LEE</span> 
+            </div>
+        </main>
+        
+        <!-- <footer class="footer flex">
+            
+        </footer> -->
+
+    </div>
+    
+</body>
+</html>

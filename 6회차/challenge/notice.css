@@ -1,6 +1,8 @@
 .notice {
     max-width: 48rem;
     margin: auto;
+
+    background-color: aqua;
 }
 .notice__title {
     font-size: 1.625rem;

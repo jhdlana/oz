@@ -1,0 +1,49 @@
+.header {
+    float: left;
+    width: 200px;
+    /* height: 100%; */
+    height: 100vh;
+    flex-direction: column;
+    background-color: pink;
+}
+.profile {
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    margin: 30px auto;
+    
+}
+.profile__simple {
+    margin-top: 15px;
+    border-bottom: 2px dashed white;
+}
+.profile__4 {
+    height: 100%;
+    flex-direction: column;
+    margin: 0 auto; 
+    margin-top: 15px;
+    justify-content: space-around; 
+    font-size: 13px;
+}
+.profile__intro, .profile__name{
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+.profile__name{
+    font-size: 20px;
+    font-weight: bold;
+}
+.profile__img {
+    width: 150px;
+    height: 150px;
+    background-color: gray;
+    margin: 0 auto;
+    border-radius: 75px;
+}
+.emoji{
+    font-size: 40px;
+}
+
+.profile__phone, .profile__email, .profile__blog, .profile__git  {
+    flex-direction: column;
+}
