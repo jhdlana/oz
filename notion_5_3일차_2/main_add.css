@@ -1,0 +1,10 @@
+.main__img{
+    width: 100%;
+    height: 600px;
+    flex-direction: column;
+    
+}
+.main__add{
+    height: 450px;
+    background-color: pink;
+}
