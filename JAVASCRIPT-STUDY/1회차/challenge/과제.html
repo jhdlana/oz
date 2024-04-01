@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+</head>
+<body>
+    <h1 class="name">이주희</h1>
+    <p class="animal">고양이</p>
+    <p class="fruit">딸기</p>
+
+    <script>
+        const nameElement = document.querySelector(".name")
+        let name = prompt("당신이 좋아하는 캐릭터 이름은?")
+        nameElement.textContent = name
+
+        const animalElement = document.querySelector(".animal")
+        let animal = prompt("좋아하는 캐릭터이 좋아하는 동물은?")
+        animalElement.textContent = `${name}는 ${animal}를 좋아한다.`
+
+        document.querySelector(".fruit").textContent = `${name}는 ${prompt("좋아하는 과일은?")}를 좋아한다. `
+    </script>
+</body>
+</html>

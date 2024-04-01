@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릴 리터럴</title>
+</head>
+<body>
+    
+    <script>
+        const dog = "강아지"
+        const cat = '고양이'
+        console.log(typeof dog)
+
+        const modifier = "귀여운"
+        const prettyDog = `${modifier} ${dog}`
+        console.log(prettyDog)
+        const prettyCat = `${modifier} ${cat} 좋아용`
+        console.log(prettyCat)
+
+        let rabbit = prompt("좋아하는 동물은?")
+        alert(rabbit)
+        const result = `그래서 너는 ${rabbit}이다.`
+        console.log(result)
+
+        const prettypet = `${modifier} ${prompt("좋아하는 동물은?")}!`
+        console.log(prettypet)
+    </script>
+</body>
+</html>

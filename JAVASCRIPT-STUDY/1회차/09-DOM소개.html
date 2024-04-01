@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 소개 & 콘텐츠 변경하기</title>
+</head>
+<body>
+
+    <p>대한민국의 역습입니다.!</p>
+    <p class="comment">손흥민 몰고 갑니다. 크로스!</p>
+    <p class="comment" id="goal">조규성의 환상적인 마무리~~~골!</p>
+
+    <script>
+        // 입력 - 처리 - 출력
+
+
+        const p1 = document.querySelector("p")
+        const p2 = document.querySelector(".comment")
+        const p3 = document.querySelector("#goal")
+
+        console.log(p1.textContent)
+        console.log(p2.textContent)
+        console.log(p3.textContent)
+
+        p1.textContent = "이주희 만세!!"
+        p2.textContent = "최지현 만세!!"
+        p3.textContent = "시루 만세!!"
+
+        // console 창에는 대한민국 ~~ 이렇게 적혀있고
+        // 브라우저 화면상에는 내가 textContent를 이용하여 querySelector로 접근한 객체의 값을 바꿔서 이주희~~ 가 나옴 => console 창과 브라우저 창에 각각 다른 텍스트가 입력됨
+    </script>
+    
+</body>
+</html>
