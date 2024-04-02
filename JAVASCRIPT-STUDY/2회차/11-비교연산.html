@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비교 연산</title>
+</head>
+<body>
+    
+    <script>
+        let age = window.parseInt(prompt("당신의 나이는?")) // parseInt('1')는 문자열로 구성된 숫자를 숫자(number)로 바꿔줌 = '1'(string) -> 1 (number)
+        console.log(typeof age) //내가 입력한 숫자(문자열)이 숫자(number)로 바뀌어 출력됨 ('18'(string) -> 18(number)) / console 창에는 똑같음 . type만 바뀜
+   
+        
+        let name = prompt("당신의 이름은?")
+        // document.write(`사용자의 이름은 ${name}입니다.<br>`)
+        document.write("사용자의 이름은  " + `${name}` + "입니다.<br>")
+        document.write(`우리가 찾던 사람 입니끼? ${name === "강윤호"}`)
+   </script>
+</body>
+</html>

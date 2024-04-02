@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2></h2>
+    <p></p>
+    <script>
+// 문제 1: 온도에 따른 의상 추천하기
+// 문제 설명: 사용자로부터 현재 온도를 입력받아, 온도에 따라 의상을 추천하는 프로그램을 작성하세요.
+// 조건:
+// 25도 이상이면 "반팔 티셔츠를 추천합니다."
+// 10도 이상 25도 미만이면 "긴팔 티셔츠를 추천합니다."
+// 0도 이상 10도 미만이면 "자켓을 추천합니다."
+// 0도 미만이면 "코트를 추천합니다."
+
+        // const temp = prompt("현재 온도를 입력하세요.")  
+        // if (temp >= 25) {
+        //     alert("반팔 티셔츠를 추천합니다.")
+        // } else if ( 10 <= temp <25) {
+        //     alert("긴팔 티셔츠를 추천합니다.")
+        // } else if ( 0 <= temp < 10) {
+        //     alert("자켓을 추천합니다.")
+        // } else if (temp < 0) {
+        //     alert("코트를 추천합니다.")
+        // }
+
+        const temp = prompt("현재 온도를 입력하세요.") 
+        const h2 = document.querySelector("h2") //querySelector("x")은 문서 내의 해당 요소(x)찾아 반환하고, 그 요소를 대상으로 함. => 요소에 접근하게 만듬
+        const p = document.querySelector("p") // p의 요소를 찾아 변수 p에 할당 => "p"의 요소에 접근
+        h2.textContent = `현재 온도는 ${temp}입니다.`
+        if (temp >= 25) {
+            p.textContent = `반팔 티셔츠를 추천합니다.`
+        } else if ( 10 <= temp <25) {
+            p.textContent = `긴팔 티셔츠를 추천합니다.`
+        } else if ( 0 <= temp < 10) {
+            p.textContent = `자켓을 추천합니다.`
+        } else if (temp < 0) {
+            p.textContent = `코트를 추천합니다.`
+        }
+
+    </script>
+</body>
+</html>

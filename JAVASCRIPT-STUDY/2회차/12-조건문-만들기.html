@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 만들기</title>
+</head>
+<body>
+    
+    <h1></h1>
+    <p></p>
+
+    <script>
+        const h1 = document.querySelector('h1')
+        const p = document.querySelector('p')
+
+        const isThere = confirm("제목 표시를 할까요?") //confirm()은 alert()와 비슷한 창이 뜨는데 '취소'버튼 누르면 'false', '확인'버튼을 누르면 'true' 값이 반환됨
+        h1.textContent = isThere
+        // if(isThere) {
+        //     h1.textContent = "문서의 제목!!"
+        // }else {
+        //     document.write("이게 뭐야!!!!")
+        //     h1.textContent = isThere
+        // }
+
+        const age = parseInt(prompt("나이가 어떻게 되세요?"))
+
+        if(age >= 20) {
+            p.textContent = "1250원입니다."
+        } else if (age >= 8){
+            p.textContent = "760원입니다."
+        } else {
+            p.textContent = "무료입니다."
+        }
+   </script>
+</body>
+</html>
