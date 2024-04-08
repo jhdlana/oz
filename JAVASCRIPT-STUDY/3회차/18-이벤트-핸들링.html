@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 & 이벤트 핸들링</title>
+</head>
+<body>
+    
+    <button id="span">SPAN</button>
+    <button id="strong">STRONG</button>
+    <button id="mark">MARK</button>
+
+    <script>
+        const spanBtn = document.getElementById("span")
+        const strongBtn = document.getElementById("strong")
+        const markBtn = document.getElementById("mark")
+
+        // spanBtn.onClick = function() { //함수 표현식
+        //     alert("span 버특 클릭함")
+        // } 
+
+        // function handleClick() { // 함수 선언식
+        //     alert("strong 버튼 클릭함")
+        // }
+
+        // strongBtn.onClick = handleClick
+
+        // spanBtn.onclick = function() {
+        //     const span = document.createElement("span")
+        //     span.textContent = "새로 생긴 span 태그입니다."
+        //     document.body.append(span)
+        // } ===
+        // spanBtn.addEventListener("click", function() {
+        //     const span = document.createElement("span")
+        //     span.textContent = "새로 생긴 span 태그입니다."
+        //     document.body.append(span)
+        // })
+
+        const handleClick = function(event) { //이벤트 객체 사욜하기
+            // const span = document.createElement("span")
+            // span.textContent = "새로 생긴 span 태그입니다."
+            // document.body.append(span)
+            if(event.target.id == "span") {
+                const span = document.createElement("span")
+            span.textContent = "새로 생긴 span 태그입니다."
+            document.body.append(span)
+            } else if(event.target.id == "strong") {
+                const strong = document.createElement("strong")
+                strong.textContent = "새로 생긴 strong 태그입니다."
+                document.body.append(strong)
+            } else if(event.target.id == "mark"){
+                const mark = document.createElement("mark")
+                mark.textContent = "새로 생긴 mark 태그입니다."
+                document.body.append(mark)
+            }
+        }
+
+        spanBtn.addEventListener("click", handleClick) //이벤트 객체 사용하기
+        strongBtn.addEventListener("click", handleClick)
+        markBtn.addEventListener("click", handleClick)
+        
+    </script>
+</body>
+</html>

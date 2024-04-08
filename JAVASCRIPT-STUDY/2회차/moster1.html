@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>몬스터 잡기 게임</title>
+</head>
+<body>
+
+    <div id="container">
+
+    </div>
+    
+
+    <script>
+        let monsterHP = 100 // 숫자
+        const container = document.getElementById("container") // id가 container인 요소를 가지고와 (접근) 변수가 container 상수를 생성 (= 객체 생성)
+
+        const h1 = document.createElement("h1") // h1태그인 요소를 생성 & 변수가 h1인 상수에 넣음 (객체 생성) !!화면에 직접적으로 보이지 않음!! => 생성(존재)만 함
+        h1.textContent = `몬스터 잡기 게임을 시작합니다!` // (h1요소를 가지고 있는)h1객체의 textContent 설정
+        container.append(h1) // id가 container인 요소에 접근한 객체를 생성한 곳 안에 내가 만든 h1객체를 넣어 !!화면에 직접 보여줌!!
+
+        let attackDamage = parseInt(prompt("1회 공격시 데미지는? (양의 정수)") )// prompt()메서드 특징 : 사용자로부터 데이터를 입력 받아 (객체)attackDamage에 반환하는데 이때 반환하는 데이터의 속성은 "문자열" so, 숫자로 변환해줘야함 => parseInt()메서드 사용 [문자열->숫자]
+        let attackCount = 0
+
+        if(attackDamage > 0){
+            while (monsterHP > 0) { // 몬스터HP가 0보다 크면(살아있으면) 계속 실행
+                monsterHP -= attackDamage // 사용자가 입력한 데미지만큼 몬스터HP 줄어듦
+                attackCount += 1 // 내가 때린 횟수는 증가!!
+                const p = document.createElement("p") // 새로운 요소 생성 (몬스터 잡는 과정을 화면에 보기위해) => p 태그를 가진 요소를 생성후 변수명이 p라는 상수에 반환 (객체 생성)
+                if(monsterHP <=0) {
+                    monsterHP = 0
+                }
+                p.textContent = `몬스터 HP : ${monsterHP} 몬스터는 사용자로부터 ${attackCount}번 맞았습니다.`
+                container.append(p)
+
+                if(monsterHP <= 0) {
+                monsterHP = 0
+                const h2 = document.createElement("h2")
+                h2.textContent = `몬스터 HP: ${monsterHP} => 몬스터가 사용자로부터 ${attackCount}번을 맞아 죽었습니다.`
+                container.append(h2)
+                }
+            }
+
+            // const p = document.createElement("p") // 새로운 요소 생성 (몬스터 잡는 과정을 화면에 보기위해) => p 태그를 가진 요소를 생성후 변수명이 p라는 상수에 반환 (객체 생성)
+            // P.textContent = `몬스터 데미지 : ${monsterHP} <br>몬스터는 사용자로부터 ${attackCount}번 맞았습니다.`
+            // container.append(p)
+
+           
+        } else {
+            alert("데미지를 잘못 입력하여 게임을 취소합니다.!!!")
+        }
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement-appendChild</title>
+</head>
+<body>
+    <div id="container">
+
+
+    </div>
+    <script>
+        const con = document.getElementById("container") //container이라는 아이디를 가진 요소에 접근 & 상수 con에 반환 => container요소(div)를 가진 con 객체 생성
+        
+        const box = document.createElement("p") // p 태그 요소를 생성 & box 에 반한(접근) but, 화면엔 보이지 X!!
+        box.style.color = "blue" // (p 태그의 요소를 가지고 있는) 객체 box의 스타일.색깔을 blue로 지정
+        box.style.width = "200px"
+        box.style.height = "200px"
+        box.textContent = "wow!!" // (p 태그의 요소를 가지고 있는) 객체 box의 내용을 textContent로 접근하여 입력
+
+        con.appendChild(box) // 넣고싶은 객체 con의 appendChild를 이용하여 
+    </script>
+</body>
+</html>
