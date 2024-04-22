@@ -70,12 +70,6 @@ let lottoNumbers = [];
   
   }
 
-  function Again() {
-    winningNumbers.splice(0, 6);
-    winningNumContainer.innerHTML = ""
-    generateNumbers()     
-}
-
   function displayNumbers(numbers) {
     /* TODO:
       1. 숫자 배열을 받아서 HTML 요소로 변환하여 반환하는 함수입니다.
