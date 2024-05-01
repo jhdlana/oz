@@ -26,51 +26,30 @@ const generateWinningNumbers = document.getElementById(
   // 자동 생성된 로또 번호를 보여줄 HTML 요소에 대한 참조를 가져옵니다.
   const lottoNumContainer = document.getElementById('lottoNumbers');
   
-let lottoNumbers = [];
-   
-  // 초기 당첨 번호 배열
-  let winningNumbers = [];
-
   /**
    * 1부터 45까지의 숫자 중에서 무작위로 6개의 숫자를 선택하여 배열로 반환하는 함수입니다.
    * 중복된 숫자가 없도록 하며, 반환된 배열은 오름차순으로 정렬됩니다.
    */
-  function generateNumbers(num) {
+  function generateNumbers() {
     /* TODO: 
       1. 1부터 45까지의 숫자 중에서 무작위로 6개의 숫자를 선택하여 배열로 반환하는 함수입니다.
       2. 중복된 숫자가 없어야 합니다.
       3. 배열은 오름차순으로 정렬하여 return합니다. 
     */
-    if(winningNumbers === num){
-        while(winningNumbers.length < 6){
-            let ran = Math.floor(Math.random() * 45) + 1
-            if(winningNumbers.indexOf(ran) === -1 ){
-                winningNumbers.push(ran)
-                winningNumbers.sort(function(a,b){ // 오름차순으로 정렬되고 값은 winningNumbers에 return됨
-                    return a-b
-                })
-                
-            }  
-        }
-        return displayNumbers(winningNumbers)
+    let numbers = [];
+    
+    while (numbers.length < 6) {
+      let ran = Math.floor(Math.random() * 45) + 1;
+      if (numbers.indexOf(ran) === -1) {
+        numbers.push(ran);
+        numbers.sort((a, b) => a - b);
+      }
     }
-    if(lottoNumbers === num){
-        while(lottoNumbers.length < 6){
-            let ran = Math.floor(Math.random() * 45) + 1
-            if(lottoNumbers.indexOf(ran) === -1 ){
-                lottoNumbers.push(ran)
-                lottoNumbers.sort(function(a,b){ // 오름차순으로 정렬되고 값은 winningNumbers에 return됨
-                    return a-b
-                })
-                
-            }  
-        }
-        return displayNumbers(lottoNumbers)
-    }
-  
+    
+    return numbers
   }
-
-  function displayNumbers(numbers) {
+  
+  function displayNumbers(numbers, winningNumbers = []) {
     /* TODO:
       1. 숫자 배열을 받아서 HTML 요소로 변환하여 반환하는 함수입니다.
       2. 각 숫자는 <span> 요소로 감싸지며, 당첨 번호와 일치하는 경우 특별한 스타일이 적용됩니다.
@@ -78,48 +57,26 @@ let lottoNumbers = [];
         - numbers - 표시할 숫자의 배열
         - winningNumbers - 당첨 번호 배열 (선택 사항)
     */
-   if(numbers === winningNumbers ){
-        const winDiv = document.createElement("div")
-        winDiv.classList.add('number-set')
-        winningNumContainer.innerHTML = ""
-        console.log(winningNumbers)
-        winningNumContainer.appendChild(winDiv)
-        for(let i =0; i<numbers.length; i++) {
-            const Span = document.createElement("span")
-            Span.classList.add('number')
-            Span.classList.add('match')
-            Span.textContent = numbers[i]
-            winDiv.appendChild(Span)
-        }
-        
-   }
-   
-    if(numbers === lottoNumbers){
-        const lottoDiv = document.createElement("div")
-        lottoDiv.classList.add('number-set')
-        lottoNumContainer.appendChild(lottoDiv)
-        for(let i =0; i<numbers.length; i++) {
-            const lottoSpan = document.createElement("span")
-            lottoSpan.classList.add('number')
-            lottoSpan.textContent = numbers[i]
-            for(let j = 0; j<numbers.length; j++){
-                console.log(winningNumbers[i])
-                console.log(lottoNumbers[j])
-                if(winningNumbers[j] === lottoNumbers[i] ) {
-                    lottoSpan.classList.add('match')
-                    break;
-                }
-
-            }
-            lottoDiv.appendChild(lottoSpan)
-            
-        }
-        
+    const div = document.createElement('div');
+    div.classList.add('number-set');
     
-    }
-    
+    numbers.forEach(function (randomNum) {
+      const span = document.createElement('span');
+      span.classList.add('number');
+      if(randomNum === winningNumbers ){
+        span.classList.add("match")
+      }
+      else if(winningNumbers.includes(randomNum) ) {
+        span.classList.add("match")
+      }
+      span.textContent = randomNum;
+      div.appendChild(span);
+    });
+    return div
   }
- 
+  
+  // 초기 당첨 번호 배열
+  let winningNumbers = [];
   
   generateWinningNumbers.addEventListener('click', () => {
     /* TODO:
@@ -127,9 +84,12 @@ let lottoNumbers = [];
       - generateNumbers 함수를 호출하여 당첨 번호를 생성하고, 이를 화면에 표시합니다.
       - 이전에 표시된 당첨 번호가 있다면, 화면에서 제거한 후 새로운 당첨 번호를 표시합니다.
     */
-      winningNumbers.splice(0, 6);
-      winningNumContainer.innerHTML = ""
-      generateNumbers(winningNumbers)
+    winningNumbers.splice(0, 6);
+    winningNumContainer.innerHTML = '';
+    winningNumbers = generateNumbers()
+    winningNumContainer.append(displayNumbers(winningNumbers))
+    
+    console.log(winningNumbers.length)
   });
   
   generateLottoNumbers.addEventListener('click', () => {
@@ -139,14 +99,16 @@ let lottoNumbers = [];
       - 당첨 번호가 아직 생성되지 않았다면, 사용자에게 경고 메시지를 표시합니다.
       - 이전에 생성된 로또 번호가 있다면, 화면에서 제거한 후 새로운 로또 번호를 표시합니다.
     */
-    lottoNumContainer.innerHTML = ""
-    if(winningNumbers.length === 0){
-        alert("당첨 번호 생성하기 버튼을 눌러주세요.")
+    lottoNumContainer.innerHTML = '';
+    if (winningNumbers.length === 0) {
+      alert('당첨 번호 생성하기 버튼을 눌러주세요.');
+      console.log(winningNumbers.length)
     } else {
-         for(let i = 0; i< 5; i++){
-            lottoNumbers.splice(0, 6);
-            generateNumbers(lottoNumbers)
-        }    
+      for (let i = 0; i < 5; i++) {
+        //lottoNumbers.splice(0, 6);
+        const lottoNumbers = generateNumbers()
+        lottoNumContainer.append(displayNumbers(lottoNumbers, winningNumbers))
+      }
     }
   });
   
