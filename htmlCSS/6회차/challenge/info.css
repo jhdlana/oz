@@ -1,0 +1,40 @@
+.info {
+    width: 100%;
+    height: 19.6875rem;
+    background-image: linear-gradient(to top left, rgb(3, 109, 3), rgb(26, 26, 143));   /* to로 시작하고 오른쪽 하단에서 시작하고 왼쪽 상단으로 그라데이션*/
+}
+.info__text{
+    max-width: 48rem; /* 크기가 이것보다 커질 순 없다. 페이지 크기가 줄어들면 글자 크기도 줄어듬*/
+    margin: auto; /* 가운데로 오게 할려고 */
+    padding: 3rem 1rem 0;
+}
+.info__text h1{
+    margin: 0;
+    font-size: 2rem;
+    line-height: 3.2rem;
+}
+.info__text p{
+    margin: 0.5rem 0 0;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+.mini {
+    color: yellow;
+}
+
+@media screen and (max-width: 768px) {
+    .info{
+        height: 18.375rem;
+    }
+    .info__text{
+        padding: 1.5rem 1rem 0;
+    }
+    .info__text h1{
+        line-height: 2rem;
+        font-size: 1.5rem;
+    }
+    .info__text p{
+        display: none;
+    }
+}

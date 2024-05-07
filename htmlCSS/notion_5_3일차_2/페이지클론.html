@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="header.css" rel="stylesheet">
+    <link href="main_add.css" rel="stylesheet">
+    <title>페이지 클론하기</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            height: 100%;
+        }
+        html{
+            height: 100%;
+            font-size: 16px;
+        }
+        body{
+            height: 100%;
+            margin: 0;
+        }
+        .container{
+            height: 100%;
+        }
+        .flex {
+            display: flex;
+        }
+        .main{
+            flex-direction: column;
+            margin: 0 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header flex">
+            <div class="header__1">
+                <div class="header__1__1 flex">
+                    <div class="header__1__left">
+                        <span class="header__1__img1">&#128161;</span>
+                        <span class="header__1__download">앱다운로드</span>
+                        <span class="header__1__img2">&#127775;</span>
+                        <span class="header__1__star">즐겨찾기</span>
+                    </div>
+                    <div class="header__1__middle"></div>
+                    <div class="header__1__right">
+                        <span class="header__1__login">로그인/회원가입</span>
+                        <span class="header__1__mypage">내 상점</span>
+                    </div>
+                    
+                </div>
+                
+               
+            </div>
+            <div class="header__2 flex">
+                <div class="header__2__2 flex">
+                    <div class="header__2__main flex">
+                        <span class="header__2__main__mark">&#128161; 번개장터</span>
+                        <input class="header__2__search" placeholder="상품명,지역명,@상점명 입력">
+                        <span class="three">
+                            <span class="heaser__2__sell">&#128176; 판매하기 </span>
+                            <span class="line">|</span>
+                            <span class="heaser__2__sell">&#128105; 내상점</span>
+                            <span class="line">|</span>
+                            <span class="heaser__2__sell">&#127785; 번개톡</span>
+                        </span>
+                        
+                    </div>
+                    <div class="header__2__menu flex">
+                        <label class="header__2__menu__ham">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                        <span class="header__2__menu__center">번개장터 판매자센터</span>
+                    </div>
+                </div>
+            </div>
+                
+        </header>
+        <main class="main flex">
+            <div class="main__img flex">
+                <div class="main__add"></div>
+                <div class="main__add2 flex">
+                    <div class="main__add2__code"></div>
+                    <div class="main__add2__codedown">
+                        스마트폰에서 더 편리한<br>
+                        <span class="appdown">취향 중고거래 앱 번개장터</span> <br>
+                        지금 다운받기
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    
+</body>
+</html>
