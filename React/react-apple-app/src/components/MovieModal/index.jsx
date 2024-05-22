@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { imageBasePath } from '../../constant'
+import './MovieModal.css'
 
 const MovieModal= ({
     // {...movieSelected}에서 가져온 데이터의 세부사항? (console로 (영화 20개 요청해서 가져온)data 아래(reseults안에 각 영화의 세부사항)에서 확인가능)
