@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const MainPage = () => {
   return (
     <Container>
-        <Nav />
+        {/* <Nav /> */}
         <Banner />
         <Row title="Trending Now" id="TN" fetchUrl={requests.fetchTrending} />
         <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRate} />
