@@ -1,5 +1,5 @@
 import { useState ,useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = () => {
@@ -7,6 +7,7 @@ const Nav = () => {
     const [searchValue, setSearchValue] = useState('')
 
     const navigate = useNavigate()
+    const {pathname} = useLocation()
 
     const listener = () => {
         if(window.scrollY > 50) {
@@ -35,7 +36,7 @@ const Nav = () => {
             <Logo>
                 <img
                     alt="logo"
-                    src="/public/images/작은시루.jpg"
+                    src="/public/images/apple-logo.png"
                     onClick={() => (window.location.href = '/')}
                 />
             </Logo>

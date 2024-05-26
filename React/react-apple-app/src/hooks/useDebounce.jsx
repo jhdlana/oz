@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
     useEffect(() => {
         const handler = setTimeout(() => {
-            setDebounceValue(debounceValue)
+            setDebounceValue(value)
         }, delay)
         
         return () => {
