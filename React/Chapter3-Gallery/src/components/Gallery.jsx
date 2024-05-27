@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import axios from 'axios';
 import styled from "styled-components"
+import { head } from 'request';
 
 const Gallery = () => {
     const [photos, setPhotos] = useState([]);
     const [inputValue, setInputValue] = useState('');
+
 
     const fetchPhotos = async (query) => {
         const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
@@ -53,9 +55,8 @@ const Gallery = () => {
                         <img
                             src={photo.urls.small}
                             alt={photo.alt_description}
-                    />
+                        />
                     </Photo>
-                    
                 ))}
             </PhotoGrid>  
         </GalleryWarp>
