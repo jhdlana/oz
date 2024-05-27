@@ -1,15 +1,50 @@
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
 const LoginPage = () => {
+  const [userIdData, setUserIdData] = useState("")
+  const [userPwData, setUserPwData] = useState("")
+
+  const navigate = useNavigate()
+
+  const handleId = (e) => {
+    setUserIdData(e.target.value)
+  }
+
+  const handlePw = (e) => {
+    setUserPwData(e.target.value)
+  }
+
+
+  
+  const handleLogin = () => {
+     // 로그인 버튼을 클릭했을 때, 로컬 스토리지에서 회원가입 정보를 가져오기.
+     const storedUserId = localStorage.getItem('userId');
+     const storedUserPw = localStorage.getItem('userPw');
+ 
+     // 입력한 아이디와 비밀번호가 저장된 아이디와 비밀번호와 일치하는지 확인.
+     if (userIdData === storedUserId && userPwData === storedUserPw) {
+       console.log("로그인 성공!");
+       navigate('/main')
+     } else {
+      alert('아이디 또는 비밀번호가 일치하지 않습니다.')
+       console.log("아이디 또는 비밀번호가 일치하지 않습니다.");
+     }
+  }
+  const handleSignup = () => {
+    navigate('/signup')
+  }
   return (
     <Container>
       <Center>
         <Logo src="public/images/apple-gray-logo.svg" />
-        <HeadingText>Sign in with your Apple ID</HeadingText>
+        <HeadingText>로그인</HeadingText>
         <DescriptionText>You will be signed in to Apple TV and Apple Music.</DescriptionText>
-        <Button>Apple ID</Button>
-        <LinkText>Create New Apple ID</LinkText>
-        <LinkText>Forgot Apple ID or Password?</LinkText>
+        <Input type="text" placeholder="아이디를 입력해주세요." value={userIdData} onChange={handleId}/>
+        <Input type="password" placeholder="비밀번호를 입력해주세요." value={userPwData} onChange={handlePw}/>
+        <Button onClick={handleLogin}>로그인</Button>
+        <Button onClick={handleSignup}>회원가입 하기</Button>
       </Center>
     </Container>
   )
@@ -45,14 +80,28 @@ const Logo = styled.img`
   width: 50px;
 `
 
-const LinkText = styled.p`
-  font-size: 1.2rem;
-  color : #2997ff;
-  margin: 1rem 0;
-`
-const Button = styled.a`
+const Button = styled.button`
   margin-top: 2.5rem;
-  margin-bottom: 8rem;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  border-color: #424245;
+  background-color: skyblue;
+  width: 310px;
+  font-weight: 400;
+  cursor: pointer;
+
+  &:hover {
+    background-color: blue;
+  }
+`
+
+const Input = styled.input`
+  color: white;
+  margin-top: 2.5rem;
   font-size: 18px;
   padding: 1rem;
   border: 1px solid transparent;
@@ -63,8 +112,8 @@ const Button = styled.a`
   font-weight: 400;
   cursor: pointer;
 
-  &:hover {
-    background-color: hsla(0, 0%, 100%, 0.08);
+  &::placeholder {
+    color: #999;
   }
 `
 
