@@ -30,7 +30,7 @@ const SignUpPage = () => {
     }
 
     const handleSignup = () => {
-        // 아이디와 비밀번호를 로컬 스토리지에 저장합니다.
+        // 아이디와 비밀번호를 로컬 스토리지에 저장.
         console.log("회원가입 버튼 클릭됨");
         console.log("아이디:", userId);
         console.log("비밀번호:", userPw);

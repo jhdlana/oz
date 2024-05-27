@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
 const LoginPage = () => {
   const [userIdData, setUserIdData] = useState("")
   const [userPwData, setUserPwData] = useState("")
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const navigate = useNavigate()
 
@@ -16,19 +17,36 @@ const LoginPage = () => {
     setUserPwData(e.target.value)
   }
 
+  // 로그인 버튼을 클릭했을 때, 로컬 스토리지에서 회원가입 정보를 가져오기.
+  const storedUserId = localStorage.getItem('userId');
+  const storedUserPw = localStorage.getItem('userPw');
+  console.log(storedUserId)
 
-  
+  useEffect(()=> {
+    if(isLoggedIn === false) {
+      navigate('/')
+    } else if(isLoggedIn === true){
+      navigate('/main')
+    }
+  },[isLoggedIn])
+
+  useEffect(() => {
+    if(storedUserId === null || storedUserPw === null){
+      setIsLoggedIn(false)
+    } 
+  },[storedUserId,storedUserPw ])
+
   const handleLogin = () => {
-     // 로그인 버튼을 클릭했을 때, 로컬 스토리지에서 회원가입 정보를 가져오기.
-     const storedUserId = localStorage.getItem('userId');
-     const storedUserPw = localStorage.getItem('userPw');
- 
      // 입력한 아이디와 비밀번호가 저장된 아이디와 비밀번호와 일치하는지 확인.
      if (userIdData === storedUserId && userPwData === storedUserPw) {
        console.log("로그인 성공!");
-       navigate('/main')
+       setIsLoggedIn(true)
+     } else if(userIdData === "" || userPwData === "") {
+      setIsLoggedIn(false)
+      alert('아이디 또는 비밀번호를 입력해주세요.')
      } else {
       alert('아이디 또는 비밀번호가 일치하지 않습니다.')
+      setIsLoggedIn(false)
        console.log("아이디 또는 비밀번호가 일치하지 않습니다.");
      }
   }
