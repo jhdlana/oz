@@ -20,8 +20,6 @@ const SignUpPage = () => {
         // }
     }, []);
 
-    
-
     const handleId = (e) => {
         setUserId(e.target.value)
     }
