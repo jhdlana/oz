@@ -23,6 +23,21 @@ export const AppReducer = (state, action) => {
                     (expense) => expense.id !== action.payload // 선택한 값(action으로 전달받은 데이터)와 원래 있던 배열(expenses)의 각 객체(expense)의 아이디와 같이 않는 것만 남겨두기(거르기 === 배열.filter())
                 )
             }
+
+            case 'ADD_INCOME':
+                return {
+                    ...state,
+                    income: [...state.income, action.payload] // payload: 데이터 전송에서 실제로 전달되고자 하는 데이터
+                    //!!!!!! 결국 변화된(새로운 상태) state를 리턴해주는 것!!!!!!!! -> 되돌아가서 객체 변경되어 UI 다시 랜더링됨
+                }
+            
+            case 'DELETE_INCOME':
+                return {
+                    ...state,
+                    income: state.income.filter(
+                        (income) => income.id !== action.payload // 선택한 값(action으로 전달받은 데이터)와 원래 있던 배열(expenses)의 각 객체(expense)의 아이디와 같이 않는 것만 남겨두기(거르기 === 배열.filter())
+                    )
+                }
         
         case 'SET_BUDGET': // 예산금액 (budget)을 바꾸고 싶으면, (지금은 30000만원)
             return{
@@ -41,7 +56,12 @@ const initialState = {
         {id: crypto.randomUUID(), name: '밥먹기', cost: 1000},
         {id: crypto.randomUUID(), name: '카드비', cost: 3000},
         {id: crypto.randomUUID(), name: '교통비', cost: 7000}
+    ],
+    income: [
+        {id: crypto.randomUUID(), name: '월급', cost: 50000},
+        {id: crypto.randomUUID(), name: '용돈', cost: 20000},
     ]
+
 }
 
 
@@ -64,6 +84,7 @@ export const AppContextProvider = (props) => {
         <AppContext.Provider value={{
             expenses: state.expenses, // 위의 state의 초기값을 initialState로 했으므로 (state == initialState) state로 접근해서 expenses가져옴(state.expenses == initialState.expenses)
             budget: state.budget,
+            income: state.income,
             dispatch
         }} {...props} />
     )

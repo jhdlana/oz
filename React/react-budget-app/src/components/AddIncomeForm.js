@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { AppContext } from '../contexts/AppContext'
 
-const AddExpenseForm = () => {
+const AddIncomeForm = () => {
 
     const [name, setName] = useState('')
     const [cost, setCost] = useState(0)
@@ -11,16 +11,17 @@ const AddExpenseForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const expense = {
+        const income = {
             id: crypto.randomUUID(),
             name: name,
             cost: cost
         }
 
         dispatch({
-            type: 'ADD_EXPENSE',
-            payload: expense
+            type: 'ADD_INCOME',
+            payload: income
         })
+
         setName('')
         setCost(0)
     }
@@ -29,7 +30,7 @@ const AddExpenseForm = () => {
         <form onSubmit={handleSubmit}>
             <div className='row'>
                 <div className='col-sm col-lg-4'>
-                <label>지출</label>
+                <label>수입</label>
                 <input 
                     required="required"
                     type='text'
@@ -40,7 +41,7 @@ const AddExpenseForm = () => {
                 />
                 </div> 
                 <div>
-                    <label>비용</label>
+                    <label>금액</label>
                     <input 
                         required="required"
                         type='number'
@@ -62,4 +63,4 @@ const AddExpenseForm = () => {
     )
 }
 
-export default AddExpenseForm
+export default AddIncomeForm
