@@ -13,6 +13,7 @@ export const AppReducer = (state, action) => {
             return {
                 ...state,
                 expenses: [...state.expenses, action.payload] // payload: 데이터 전송에서 실제로 전달되고자 하는 데이터
+                //!!!!!! 결국 변화된(새로운 상태) state를 리턴해주는 것!!!!!!!! -> 되돌아가서 객체 변경되어 UI 다시 랜더링됨
             }
         
         case 'DELETE_EXPENSE':

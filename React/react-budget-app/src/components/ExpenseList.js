@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../contexts/AppContext'
 import ExpenseItem from './ExpenseItem';
 
@@ -6,6 +6,12 @@ const ExpenseList = () => {
     // 구조분해 할당으로 value에서 필요한 부분만 가져옴(expenses)만.
     const {expenses} = useContext(AppContext) // AppContext 는 데이터 저장소 -> useContext()로 return하는 value를 가져올수있음
     console.log(expenses);
+    
+    // Form에서 아이템을 추가하면 fillteredExpenses 상태를 추가한 아이템까지 포함해서 새로 업데이트 새켜줘야함.
+    useEffect(() => {
+        setFilteredExpenses(expenses)
+    }, [expenses])
+    
 
     const [filteredExpenses, setFilteredExpenses] = useState(expenses || []) // useState 값이 있으면 expenses, 없으면 [] 빈배열
     const handleChange = (e) => {
