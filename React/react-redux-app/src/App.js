@@ -37,8 +37,6 @@ function App() {
     return dispatch({type:'DECREMENT'})
   }
   const handleSecCount = () => {
-    
-    // return setTimeout(() => dispatch({type:'INCREMENT'}), 1000)
     dispatch(count())
   }
 
